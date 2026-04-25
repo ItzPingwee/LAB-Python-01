@@ -1,0 +1,17 @@
+import math
+
+posiciones = [(0, 0), (1, 2), (3, 4)]
+distancia_total = 0
+
+for i in range(len(posiciones) - 1):
+    punto_actual = posiciones[i]
+    punto_siguiente = posiciones[i + 1]
+    d = math.sqrt((punto_siguiente[0] - punto_actual[0])**2 + 
+                  (punto_siguiente[1] - punto_actual[1])**2)
+    
+    distancia_total += d
+
+print(f"Distancia total recorrida: {round(distancia_total, 2)}")
+
+# Al intentar cambiar el valor del ancho se obtiene un error, esto sucede porque a diferencia de las listas las tuplas son inmutables,
+# es decir no permiten cambios o no guardan espacio en memoria para modificaciones
